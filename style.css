@@ -11,7 +11,7 @@ body {background: #666; font-size: 10px;}
 div.mCSB_container{max-width: 400px;padding-left: 8px; padding-right:12px;margin-left: auto; margin-right: auto}
 .button {
     margin:2px; border: 0px; padding: 2px;
-    background: #777; color: #ddd;
+    background: #666; color: #ddd;
     text-align: left;
 }
 .button:active {background: url(btpast.png); color:#fff; text-align: right;}
