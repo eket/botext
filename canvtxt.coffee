@@ -2,10 +2,10 @@ shit = ["minden nagyon", "legjobb lesz ha", "megnézném", "irány", "nincs","le
 words = ["word", "word", "word", "word","dsdfs"];
 
 for s, i in shit
-    $('#verbs').append("<div class='button' onclick='init(" +i+")'>" + s + "</div>");
+    $('#verbs').append "<div class='button' onclick='init(#{i})'>#{s}</div>"
 
 for w, i in words
-    $('#words').append("<div class='button' onclick='init("+i+")'>" + w + "</div>");
+    $('#words').append "<div class='button' onclick='init(#{i})'>#{s}</div>"
 
 $ ->
     $("#page").mCustomScrollbar
@@ -14,6 +14,6 @@ $ ->
         autoDraggerLength: true
         autoHideScrollbar: true
         theme:'dark-thin'
-    
+
 init = (i) ->
-    $('#story').html($('#story').html()+"<br>megnyomtad a "+shit[i]+" gombot")
+    $('#story').append "<br>megnyomtad a #{shit[i]} gombot"
