@@ -15,16 +15,6 @@ for (i = _j = 0, _len1 = words.length; _j < _len1; i = ++_j) {
   $('#words').append("<div class='button' onclick='init(" + i + ")'>" + s + "</div>");
 }
 
-$(function() {
-  return $("#page").mCustomScrollbar({
-    scrollInertia: 0,
-    mouseWheelPixels: '12',
-    autoDraggerLength: true,
-    autoHideScrollbar: true,
-    theme: 'dark-thin'
-  });
-});
-
 init = function(i) {
-  return $('#story').append("<br>megnyomtad a " + shit[i] + " gombot");
+  return $('#page').append("<br>megnyomtad a " + shit[i] + " gombot");
 };

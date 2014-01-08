@@ -7,13 +7,5 @@ for s, i in shit
 for w, i in words
     $('#words').append "<div class='button' onclick='init(#{i})'>#{s}</div>"
 
-$ ->
-    $("#page").mCustomScrollbar
-        scrollInertia:0
-        mouseWheelPixels: '12'
-        autoDraggerLength: true
-        autoHideScrollbar: true
-        theme:'dark-thin'
-
 init = (i) ->
-    $('#story').append "<br>megnyomtad a #{shit[i]} gombot"
+    $('#page').append "<br>megnyomtad a #{shit[i]} gombot"
