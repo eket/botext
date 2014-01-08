@@ -7,14 +7,15 @@ words = ["word", "word", "word", "word", "dsdfs"];
 
 for (i = _i = 0, _len = shit.length; _i < _len; i = ++_i) {
   s = shit[i];
-  $('#verbs').append("<div class='button' onclick='init(" + i + ")'>" + s + "</div>");
+  $('#verbs').append("<div class='button' onmouseup='init(" + i + ")'>" + s + "</div>");
 }
 
 for (i = _j = 0, _len1 = words.length; _j < _len1; i = ++_j) {
   w = words[i];
-  $('#words').append("<div class='button' onclick='init(" + i + ")'>" + s + "</div>");
+  $('#words').append("<div class='button' onmouseup='init(" + i + ")'>" + s + "</div>");
 }
 
 init = function(i) {
-  return $('#page').append("<br>megnyomtad a " + shit[i] + " gombot");
+  $('#page').append("<br>megnyomtad a " + shit[i] + " gombot");
+  return $('#page').scrollTop($('#page')[0].scrollHeight);
 };
