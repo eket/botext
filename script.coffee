@@ -37,7 +37,7 @@ $ ->
             if cs.length == 1
                 if _.isString current[cs[0]]
                     if enter
-                        _.extend init(), log: "<p>#{current[cs[0]]}</p>"
+                        _.extend init(), log: "<p2>#{current[cs[0]]}</p>"
                     else
                         {path, current, input}
                 else
