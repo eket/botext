@@ -7,6 +7,13 @@ __ = function() {
 };
 
 map = {
+  gabba: {
+    dance: {
+      'to music': '4/4/4/4/4',
+      'to waves': 'whoohoooo',
+      'till sunrise': 'you dance till the sun comes up and your eyes cant bear the rise'
+    }
+  },
   street: {
     go: {
       'to work': 'i dont really need that',
@@ -17,14 +24,33 @@ map = {
       'go anywhere and wait': 'finally a good idea!',
       'do nothing': 'nothing so painful'
     },
-    'download': {
+    download: {
       'some shit': {
         t: 'i get some acid playing in my ears in a minute',
-        c: [[111, 'street', 'go', 'acid party']]
+        set: {
+          street: {
+            go: {
+              'gabba': {
+                t: 'okay, lets do it!',
+                scene: 'gabba'
+              },
+              'eki': 'para'
+            }
+          }
+        },
+        del: {
+          street: {
+            go: 'to work'
+          }
+        }
       },
       'the link': 'i type my password in, and after a second im looking at my stats'
     }
   }
+};
+
+state = {
+  scene: 'street'
 };
 
 render_scene = function(scene) {
@@ -79,28 +105,53 @@ render_verb = function(verb) {
 };
 
 render_word = function(word) {
-  var t;
-  if ((t = map[state.scene][state.verb][word].t) != null) {
-    $('#page').append("<br>" + t);
-    /*switch map[state.scene][state.verb][word].c
-        when 111
-    */
-
+  var a, node, sk, sv, vk, vv, wk, wv, _base, _ref, _ref1;
+  node = map[state.scene][state.verb][word];
+  if (node.t != null) {
+    $('#page').append("<br>" + node.t);
+    _ref = node.set;
+    for (sk in _ref) {
+      sv = _ref[sk];
+      if (map[sk] == null) {
+        map[sk] = sv;
+      }
+      for (vk in sv) {
+        vv = sv[vk];
+        if ((_base = map[sk])[vk] == null) {
+          _base[vk] = vv;
+        }
+        for (wk in vv) {
+          wv = vv[wk];
+          map[sk][vk][wk] = wv;
+        }
+      }
+    }
+    _ref1 = node.del;
+    for (sk in _ref1) {
+      sv = _ref1[sk];
+      for (vk in sv) {
+        vv = sv[vk];
+        delete map[sk][vk][vv];
+      }
+      if (_.isEmpty(map[sk][vk])) {
+        delete map[sk];
+      }
+    }
   } else {
     $('#page').append("<br>" + map[state.scene][state.verb][word]);
     $('#page').scrollTop($('#page')[0].scrollHeight);
   }
+  a = state;
   delete map[state.scene][state.verb][word];
   if (_.isEmpty(_.keys(map[state.scene][state.verb]))) {
     delete map[state.scene][state.verb];
-    return render_scene(state.scene);
-  } else {
-    return render_verb(state.verb);
   }
+  if (node.scene != null) {
+    state = {
+      scene: node.scene
+    };
+  }
+  return render_scene(state.scene);
 };
 
-state = {
-  scene: 'street'
-};
-
-render_scene(state.scene);
+render_scene('street');
