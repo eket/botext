@@ -20,7 +20,7 @@ map = {
     'download': {
       'some shit': {
         t: 'i get some acid playing in my ears in a minute',
-        c: [111, 'street', 'go', 'acid party']
+        c: [[111, 'street', 'go', 'acid party']]
       },
       'the link': 'i type my password in, and after a second im looking at my stats'
     }
