@@ -67,7 +67,7 @@ render_word = function(word) {
   var a, node, sk, sv, vk, vv, wk, wv, _base, _ref, _ref1;
   node = map[state.scene][state.verb][word];
   if (node.t != null) {
-    $('#page').append("<br>" + node.t);
+    $('#page').append("<br><pre>" + node.t);
     $('#page').scrollTop($('#page')[0].scrollHeight);
     _ref = node.set;
     for (sk in _ref) {
@@ -98,7 +98,7 @@ render_word = function(word) {
       }
     }
   } else {
-    $('#page').append("<br>" + map[state.scene][state.verb][word]);
+    $('#page').append("<br><pre>" + map[state.scene][state.verb][word]);
     $('#page').scrollTop($('#page')[0].scrollHeight);
   }
   a = state;
@@ -114,6 +114,10 @@ render_word = function(word) {
   return render_scene(state.scene);
 };
 
-render_scene('street');
+state.scene = map.opening.sc;
+
+render_scene(state.scene);
+
+$('#page').append("<br><pre>" + map.opening.t);
 
 $('#page').scrollTop($('#page')[0].scrollHeight);

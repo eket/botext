@@ -1,4 +1,7 @@
 window.Map = 
+  opening:
+    sc:'street'
+    t:'    I felt quite lucky this morning. But now Im just a doll sitting on this rotten bus for hours. I may as well leave now, the bus isnt gonna go anywhere in the near future. I think the driver is asleep, but its possible that he isnt even on the bus.'
   gabba: 
     dance:
       'to music':'4/4/4/4/4'
@@ -14,12 +17,12 @@ window.Map =
       'do nothing': 'nothing so painful' 
     download: 
       'some shit': 
-        t: 'i get some acid playing in my ears in a minute'
+        t: '    i get some acid playing in my ears in a minute'
         set:  
           street:
             go: 
               'gabba': 
-                t:'okay, lets do it!'
+                t:'<br>***<br><br>okay, lets do it!'
                 scene: 'gabba'
               'eki': 'para'
         del:

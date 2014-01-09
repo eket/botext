@@ -6,7 +6,8 @@ state = scene: 'street'
 
 render_scene = (scene) ->
   $('#verbs').empty()
-  $('#words').empty() 
+  $('#words').empty()
+
   for v in _.keys map[scene]
     el= $ "<div class='button'>#{v}</div>"
     el.on 'mouseup', do (v) -> -> render_verb v
@@ -29,7 +30,7 @@ render_verb = (verb) ->
 render_word = (word) ->
   node =map[state.scene][state.verb][word]
   if node.t?
-    $('#page').append "<br>#{node.t}"
+    $('#page').append "<br><pre>#{node.t}"
     $('#page').scrollTop $('#page')[0].scrollHeight
 
     for sk, sv of node.set
@@ -46,7 +47,7 @@ render_word = (word) ->
         delete map[sk]
 
   else
-    $('#page').append "<br>#{map[state.scene][state.verb][word]}"
+    $('#page').append "<br><pre>#{map[state.scene][state.verb][word]}"
     $('#page').scrollTop $('#page')[0].scrollHeight
   
   a = state
@@ -59,6 +60,7 @@ render_word = (word) ->
 
   render_scene state.scene
 
-
-render_scene 'street'
+state.scene = map.opening.sc
+render_scene state.scene
+$('#page').append "<br><pre>#{map.opening.t}"
 $('#page').scrollTop $('#page')[0].scrollHeight
