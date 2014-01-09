@@ -61,6 +61,7 @@ render_word = (word) ->
   node =map[state.scene][state.verb][word]
   if node.t?
     $('#page').append "<br>#{node.t}"
+    $('#page').scrollTop $('#page')[0].scrollHeight
 
     for sk, sv of node.set
       map[sk] ?= sv
@@ -83,7 +84,7 @@ render_word = (word) ->
   delete map[state.scene][state.verb][word]
   if _.isEmpty _.keys map[state.scene][state.verb]
     delete map[state.scene][state.verb]
-
+  
   if node.scene?
     state = scene: node.scene
 
@@ -91,3 +92,4 @@ render_word = (word) ->
 
 
 render_scene 'street'
+$('#page').scrollTop $('#page')[0].scrollHeight

@@ -109,6 +109,7 @@ render_word = function(word) {
   node = map[state.scene][state.verb][word];
   if (node.t != null) {
     $('#page').append("<br>" + node.t);
+    $('#page').scrollTop($('#page')[0].scrollHeight);
     _ref = node.set;
     for (sk in _ref) {
       sv = _ref[sk];
@@ -155,3 +156,5 @@ render_word = function(word) {
 };
 
 render_scene('street');
+
+$('#page').scrollTop($('#page')[0].scrollHeight);
