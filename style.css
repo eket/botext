@@ -2,18 +2,20 @@ html, body, .container {height: 100%; }
 body {background: #666; font-size: 10px;}
 
 .row { margin:0; }
-.col-xs-6, .col-xs-12 { margin:0; padding:0; }
+.col-xs-6, .col-xs-12 { margin:0; padding:0; position: relative;}
 
 .page.row {height: 68%; border:2px solid #444; background: #ccc;}
-.menu.row {height: 32%; background: #000;}
+.menu.row {height: 32%; background: #333;padding-right: 2px}
 
-#page {height: 100%; overflow: auto; max-width: 400px;padding-left: 8px; padding-right:12px;margin-left: auto; margin-right: auto}
+#page {height: 100%; overflow: auto; max-width: 400px;padding-left: 8px; padding-right:12px;margin-left: auto; margin-right: auto; cursor:default
+}
 .button {
-    margin:2px; border: 0px; padding: 2px;
-    background: #777; color: #ddd;
+    margin-left:2px;margin-right: 0px; margin-bottom: 2px; margin-top: 2px; border: 0px; padding: 2px;
+    background: #777; color: #ddd; cursor:default;
     text-align: left;
 }
-.button:active {background: url(btpast.png); color:#fff; text-align: right;}
+.button.selected {background: url(btpast.png); color:#fff; text-align: right;position:relative;}
+
 .button:hover {background: url(btselected.gif);}
 
 .noselect {-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
