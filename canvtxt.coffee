@@ -9,7 +9,7 @@ render_scene = (scene) ->
   $('#words').empty()
 
   for v in _.keys map[scene]
-    el= $ "<div class='button'>#{v}</div>"
+    el= $ "<div class='left button'>#{v}</div>"
     el.on 'mouseup', do (v) -> -> render_verb v
     $('#verbs').append el
 
@@ -17,11 +17,12 @@ render_verb = (verb) ->
   $('#verbs').empty()
   $('#words').empty()
   state.verb = verb
-  ce= $ "<div class='selected button'>#{verb}</div>"
+  ce= $ "<div class='selected left button'>#{verb}</div>"
+  $('#verbs').fadeIn(100)
   ce.on 'mouseup', -> render_scene(state.scene)
   $('#verbs').append ce
   for w in _.keys map[state.scene][verb]
-    el= $ "<div class='button'>#{w}</div>"
+    el= $ "<div class='right button'>#{w}</div>"
     el.on 'mouseup', do (w) -> -> render_word w
     el.on 'mouseenter', do (el) -> -> $('.selected.button').css top: (el.position().top)+'px'
     $('#words').append el
@@ -57,6 +58,13 @@ render_word = (word) ->
 
   if node.scene?
     state = scene: node.scene
+
+  if node.one?
+    delete map[state.scene][state.verb]
+
+  if node.bg?
+    $('body').css({background:"url(#{node.bg})";})
+
 
   render_scene state.scene
 

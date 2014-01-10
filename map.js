@@ -9,39 +9,53 @@ window.Map = {
       'to music': '4/4/4/4/4',
       'to waves': 'whoohoooo',
       'till sunrise': 'you dance till the sun comes up and your eyes cant bear the rise'
+    },
+    go: {
+      'find some shit': 'I walk around for hours but everybody seems to be so sober I cant even understand what they are saying to me.',
+      'home by bus': {
+        t: 'I leave as fast as I can and an hour later, Im sitting on a driverless bus.',
+        scene: 'street'
+      }
     }
   },
   street: {
-    go: {
-      'to work': 'i dont really need that',
-      'to a friends house': 'i cant go there, its too soon.',
-      'home': 'i guess im already there'
+    'look at': {
+      'the bus driver': '   Finally a good idea! I get up and go to the bus driver. Closer I can see that he`s no longer in the driver cabin. Theres only a photograph of an ugly child next to buttons and switches of the bus.',
+      'my face': 'Nothing so scary as seeing your face melting away. I`m lucky to be so solid now. I almost feel human.'
     },
-    'don\'t': {
-      'go anywhere and wait': 'finally a good idea!',
-      'do nothing': 'nothing so painful'
+    "do": {
+      'amazing background change': {
+        t: 'there you go!',
+        bg: 'btselected.gif'
+      },
+      'sparkles': {
+        t: '     I play around with a box of match, and after a while I manage to set my seat on fire.',
+        set: {
+          'street': {
+            'make fire stop': {
+              'with my coat': 'Are you kidding with me? I`m not gonna fuck up my clothing beacause of some silly fire',
+              'with bare hands': '   I try to tap away the fire, but it keeps getting bigger.'
+            }
+          }
+        }
+      },
+      'something with myself': '    I punch my head to the window of the bus, and start screaming around like I`m a mad man.'
     },
-    download: {
-      'some shit': {
-        t: '    i get some acid playing in my ears in a minute',
+    'check the web': {
+      'for some shit': {
+        t: '    I find a gabber party nearby, maybe I should check that out. There`s a good chance I can get some shit over there.',
         set: {
           street: {
             go: {
               'gabba': {
-                t: '<br>***<br><br>okay, lets do it!',
+                t: 'I arrive to the',
                 scene: 'gabba'
-              },
-              'eki': 'para'
+              }
             }
-          }
-        },
-        del: {
-          street: {
-            go: 'to work'
           }
         }
       },
-      'the link': 'i \ntype my password in, and after a second im looking at my stats'
+      'just to spend time': 'I dont have much time to spend.'
     }
   }
 };

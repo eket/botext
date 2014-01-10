@@ -1,22 +1,30 @@
 html, body, .container {height: 100%; }
-body {background: url(btselected.gif); font-size: 10px;}
+body {background: #000; font-size: 10px;}
 
 .row { margin:0; }
 .col-xs-6, .col-xs-12 { margin:0; padding:0; position: relative;}
 
-.page.row {height: 68%;  max-width: 600px; border:2px solid #444; background: #ccc; position:relative;}
-.menu.row {height: 32%; max-width: 600px; background: #333;padding-right: 2px; padding-top: 8px}
+.page.row {height: 68%;  max-width: 500px; 
+ border-left:4px solid #444; border-right:4px solid #444;
+ background: #ccc; position:relative;}
+.menu.row {height: 32%; max-width: 500px; background: #222;
+ border:4px solid #444; border-top: 2px solid #444; border-bottom-color:#000;padding-right: 0px; padding-top: 0px}
 #main {padding-right: 4px; padding-left: 4px}
 #page {max-height:90%; overflow: auto; max-width: 400px;padding-left: 8px; padding-right:8px;margin-left: auto; margin-right: auto; cursor:default; position:absolute;bottom:0;margin-bottom: 10px
 }
+.button:last-child {border-bottom: 1px solid #444}
 .button {
-    margin-left:2px;margin-right: 0px; margin-bottom: 2px; margin-top: 2px; border: 0px; padding: 2px; padding-left: 8px;
-    background: #555; color: #eee; cursor:default;
-    text-align: left;
+    margin-left:0px;margin-right: 0px; margin-bottom: 1px; margin-top: 1px; border: 0px; padding: 2px;
+    background: #333; color: #ccc; cursor:default;border-bottom: 0px solid#333
 }
-.button.selected {background-color:#333 ; text-align: right;position:relative;}
+.button.selected {background-color:#666;color:#eee; ;position:relative; border-bottom: 0px solid#000;border-left: 0px solid#000}
 
-.button:hover {background-color: #777;}
+.button:hover {background-color: #666;color:#eee;
+ border-bottom: 0px solid#eee;}
+.button.left:hover {border-left: 4px solid#444}
+.button.right:hover {border-right: 4px solid#444}
+.button.right{margin-right:20%;text-align: left; border-right: 4px solid #444}
+.button.left {margin-left:20%;text-align: right; border-left: 4px solid #444}
 
 pre {
  font-size: 8px; font-family:'Arial'; margin: 0; padding: 0; background-color: #ccc;

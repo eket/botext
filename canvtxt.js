@@ -20,7 +20,7 @@ render_scene = function(scene) {
   _results = [];
   for (_i = 0, _len = _ref.length; _i < _len; _i++) {
     v = _ref[_i];
-    el = $("<div class='button'>" + v + "</div>");
+    el = $("<div class='left button'>" + v + "</div>");
     el.on('mouseup', (function(v) {
       return function() {
         return render_verb(v);
@@ -36,7 +36,8 @@ render_verb = function(verb) {
   $('#verbs').empty();
   $('#words').empty();
   state.verb = verb;
-  ce = $("<div class='selected button'>" + verb + "</div>");
+  ce = $("<div class='selected left button'>" + verb + "</div>");
+  $('#verbs').fadeIn(100);
   ce.on('mouseup', function() {
     return render_scene(state.scene);
   });
@@ -45,7 +46,7 @@ render_verb = function(verb) {
   _results = [];
   for (_i = 0, _len = _ref.length; _i < _len; _i++) {
     w = _ref[_i];
-    el = $("<div class='button'>" + w + "</div>");
+    el = $("<div class='right button'>" + w + "</div>");
     el.on('mouseup', (function(w) {
       return function() {
         return render_word(w);
@@ -110,6 +111,14 @@ render_word = function(word) {
     state = {
       scene: node.scene
     };
+  }
+  if (node.one != null) {
+    delete map[state.scene][state.verb];
+  }
+  if (node.bg != null) {
+    $('body').css({
+      background: "url(" + node.bg + ")"
+    });
   }
   return render_scene(state.scene);
 };
