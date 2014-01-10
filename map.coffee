@@ -20,7 +20,7 @@ window.Map =
             'make fire stop':
               'with my coat': 'Are you kidding with me? I`m not gonna fuck up my clothing beacause of some silly fire.'
               'with bare hands':
-                t: '   I try to tap away the fire, but it keeps getting bigger. So big that it might hurt my whats in my bag. I got to protect the content at all costs.'
+                t: '   I try to tap away the fire, but it keeps getting bigger. So big that it might hurt whats in my bag. I got to protect the content at all costs.'
                 set:
                   'street':
                     'escape':
