@@ -68,7 +68,13 @@ render_word = function(word) {
   var a, node, sk, sv, vk, vv, wk, wv, _base, _ref, _ref1;
   node = map[state.scene][state.verb][word];
   if (node.t != null) {
-    $('#page').append("<br><pre>" + node.t);
+    if (node.scene != null) {
+      $('#page').append("<pre class='inter'>***");
+    }
+    if (node.i != null) {
+      $('#page').append("<pre class='inter'><img src='" + node.i + "'></pre>");
+    }
+    $('#page').append("<pre>    " + node.t);
     $('#page').scrollTop($('#page')[0].scrollHeight);
     _ref = node.set;
     for (sk in _ref) {
@@ -99,7 +105,7 @@ render_word = function(word) {
       }
     }
   } else {
-    $('#page').append("<br><pre>" + map[state.scene][state.verb][word]);
+    $('#page').append("<pre>    " + map[state.scene][state.verb][word]);
     $('#page').scrollTop($('#page')[0].scrollHeight);
   }
   a = state;
@@ -120,6 +126,9 @@ render_word = function(word) {
       background: "url(" + node.bg + ")"
     });
   }
+  if (node.answ != null) {
+    $('#page').append("" + node.answ);
+  }
   return render_scene(state.scene);
 };
 
@@ -127,6 +136,6 @@ state.scene = map.opening.sc;
 
 render_scene(state.scene);
 
-$('#page').append("<br><pre>" + map.opening.t);
+$('#page').append("<pre>    " + map.opening.t);
 
 $('#page').scrollTop($('#page')[0].scrollHeight);

@@ -21,6 +21,7 @@ render_verb = (verb) ->
   $('#verbs').fadeIn(100)
   ce.on 'mouseup', -> render_scene(state.scene)
   $('#verbs').append ce
+
   for w in _.keys map[state.scene][verb]
     el= $ "<div class='right button'>#{w}</div>"
     el.on 'mouseup', do (w) -> -> render_word w
@@ -30,9 +31,19 @@ render_verb = (verb) ->
 
 render_word = (word) ->
   node =map[state.scene][state.verb][word]
+
+
   if node.t?
-    $('#page').append "<br><pre>#{node.t}"
+
+    if node.scene?
+      $('#page').append "<pre class='inter'>***"
+
+    if node.i?
+      $('#page').append "<pre class='inter'><img src='#{node.i}'></pre>"
+
+    $('#page').append "<pre>    #{node.t}"
     $('#page').scrollTop $('#page')[0].scrollHeight
+
 
     for sk, sv of node.set
       map[sk] ?= sv
@@ -48,7 +59,7 @@ render_word = (word) ->
         delete map[sk]
 
   else
-    $('#page').append "<br><pre>#{map[state.scene][state.verb][word]}"
+    $('#page').append "<pre>    #{map[state.scene][state.verb][word]}"
     $('#page').scrollTop $('#page')[0].scrollHeight
   
   a = state
@@ -59,16 +70,20 @@ render_word = (word) ->
   if node.scene?
     state = scene: node.scene
 
+
   if node.one?
     delete map[state.scene][state.verb]
 
   if node.bg?
     $('body').css({background:"url(#{node.bg})";})
 
+  if node.answ?
+    $('#page').append "#{node.answ}"
+
 
   render_scene state.scene
 
 state.scene = map.opening.sc
 render_scene state.scene
-$('#page').append "<br><pre>#{map.opening.t}"
+$('#page').append "<pre>    #{map.opening.t}"
 $('#page').scrollTop $('#page')[0].scrollHeight
