@@ -1,6 +1,7 @@
 window.Map = 
   opening:
     sc:'street'
+    title:'based on real text'
     t:'I felt quite lucky this morning. But now Im just a doll sitting on this rotten bus for hours. I may as well leave now, the bus isnt gonna go anywhere in the near future. I think the driver is asleep, but its possible that he isnt even on the bus.'
   
   street:
@@ -47,7 +48,7 @@ window.Map =
     dance:
       'to music':'4/4/4/4/4'
       'to waves':'whoohoooo'
-      'till sunrise': 'I dance till the sun comes up and my eyes cant bear the rises.'
+      'till sunrise':'I dance till the sun comes up and my eyes cant bear the rises.'
     go:
       'find some shit': 'I walk around for hours but everybody seems to be so sober I cant even understand what they are saying to me.'
       'home by bus':

@@ -32,7 +32,8 @@ render_scene = function(scene) {
 };
 
 render_verb = function(verb) {
-  var ce, el, w, _i, _len, _ref, _results;
+  var ce, el, node, w, _i, _len, _ref, _results;
+  node = map[state.scene][state.verb];
   $('#verbs').empty();
   $('#words').empty();
   state.verb = verb;
@@ -127,7 +128,7 @@ render_word = function(word) {
     });
   }
   if (node.answ != null) {
-    $('#page').append("" + node.answ);
+    $('#page').append("- " + node.answ);
   }
   return render_scene(state.scene);
 };
@@ -135,6 +136,8 @@ render_word = function(word) {
 state.scene = map.opening.sc;
 
 render_scene(state.scene);
+
+$('#page').append("<pre class='inter title'>" + map.opening.title);
 
 $('#page').append("<pre>    " + map.opening.t);
 

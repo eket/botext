@@ -14,6 +14,8 @@ render_scene = (scene) ->
     $('#verbs').append el
 
 render_verb = (verb) ->
+  node = map[state.scene][state.verb]
+
   $('#verbs').empty()
   $('#words').empty()
   state.verb = verb
@@ -27,7 +29,6 @@ render_verb = (verb) ->
     el.on 'mouseup', do (w) -> -> render_word w
     el.on 'mouseenter', do (el) -> -> $('.selected.button').css top: (el.position().top)+'px'
     $('#words').append el
-
 
 render_word = (word) ->
   node =map[state.scene][state.verb][word]
@@ -78,12 +79,13 @@ render_word = (word) ->
     $('body').css({background:"url(#{node.bg})";})
 
   if node.answ?
-    $('#page').append "#{node.answ}"
+    $('#page').append "- #{node.answ}"
 
 
   render_scene state.scene
 
 state.scene = map.opening.sc
 render_scene state.scene
+$('#page').append "<pre class='inter title'>#{map.opening.title}"
 $('#page').append "<pre>    #{map.opening.t}"
 $('#page').scrollTop $('#page')[0].scrollHeight
