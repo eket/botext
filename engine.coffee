@@ -39,8 +39,8 @@ render_word = (word) ->
     if node.scene?
       $('#page').append "<pre class='inter'>***"
 
-    if node.i?
-      $('#page').append "<pre class='inter'><img src='#{node.i}'></pre>"
+    if node.img?
+      $('#page').append "<pre class='inter'><img src='img/#{node.i}'></pre>"
 
     $('#page').append "<pre>    #{node.t}"
     $('#page').scrollTop $('#page')[0].scrollHeight
@@ -76,7 +76,7 @@ render_word = (word) ->
     delete map[state.scene][state.verb]
 
   if node.bg?
-    $('body').css({background:"url(#{node.bg})";})
+    $('body').css({background:"url(img/#{node.bg})";})
 
   if node.answ?
     $('#page').append "- #{node.answ}"

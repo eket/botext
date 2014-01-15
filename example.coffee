@@ -43,7 +43,7 @@ window.Map =
       'just to spend time': 'I dont have much time to spend.'
       '...i need fun':
         t:'I dont know if I like this.'
-        i:'itgetsworse.gif'  
+        img:'itgetsworse.gif'  
   gabba: 
     dance:
       'to music':'4/4/4/4/4'

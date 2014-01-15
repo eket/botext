@@ -72,8 +72,8 @@ render_word = function(word) {
     if (node.scene != null) {
       $('#page').append("<pre class='inter'>***");
     }
-    if (node.i != null) {
-      $('#page').append("<pre class='inter'><img src='" + node.i + "'></pre>");
+    if (node.img != null) {
+      $('#page').append("<pre class='inter'><img src='img/" + node.i + "'></pre>");
     }
     $('#page').append("<pre>    " + node.t);
     $('#page').scrollTop($('#page')[0].scrollHeight);
@@ -124,7 +124,7 @@ render_word = function(word) {
   }
   if (node.bg != null) {
     $('body').css({
-      background: "url(" + node.bg + ")"
+      background: "url(img/" + node.bg + ")"
     });
   }
   if (node.answ != null) {
