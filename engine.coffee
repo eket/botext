@@ -59,14 +59,17 @@ render_word = (word) ->
         for wk, wv of vv when wk in node.del
           delete vv[wk]
         if vk in node.del or _.isEmpty sv[vk]
-          sv[vk] = {}
+          delete sv[vk]
+
+    if _.isEmpty node.del
+      map[state.scene][state.verb] = {}
 
   else
     $('#page').append "<pre>    #{map[state.scene][state.verb][word]}"
     $('#page').scrollTop $('#page')[0].scrollHeight
   
   a = state
-  delete map[state.scene][state.verb][word]
+  try delete map[state.scene][state.verb][word]
   if _.isEmpty _.keys map[state.scene][state.verb]
     delete map[state.scene][state.verb]
 

@@ -107,16 +107,21 @@
             }
           }
           if (__indexOf.call(node.del, vk) >= 0 || _.isEmpty(sv[vk])) {
-            sv[vk] = {};
+            delete sv[vk];
           }
         }
+      }
+      if (_.isEmpty(node.del)) {
+        map[state.scene][state.verb] = {};
       }
     } else {
       $('#page').append("<pre>    " + map[state.scene][state.verb][word]);
       $('#page').scrollTop($('#page')[0].scrollHeight);
     }
     a = state;
-    delete map[state.scene][state.verb][word];
+    try {
+      delete map[state.scene][state.verb][word];
+    } catch (_error) {}
     if (_.isEmpty(_.keys(map[state.scene][state.verb]))) {
       delete map[state.scene][state.verb];
     }
@@ -150,3 +155,7 @@
   $('#page').scrollTop($('#page')[0].scrollHeight);
 
 }).call(this);
+
+/*
+//@ sourceMappingURL=engine.map
+*/
