@@ -8,7 +8,9 @@ window.Map =
     
     'look at': 
       'the bus driver': 'Finally a good idea! I get up and go to the bus driver. Closer I can see that he`s no longer in the driver cabin. Theres only a photograph of an ugly child next to buttons and switches of the bus.',
-      'my face':'Nothing so scary as seeing your face melting away. I`m lucky to be so solid now. I almost feel human.' 
+      'my face':
+        t: 'Nothing so scary as seeing your face melting away. I`m lucky to be so solid now. I almost feel human.'
+        del: ['look at', 'amazing background change']
     do:
       'amazing background change': 
         t:'there you go!'

@@ -27,7 +27,8 @@ render_verb = (verb) ->
   for w in _.keys map[state.scene][verb]
     el= $ "<div class='right button'>#{w}</div>"
     el.on 'mouseup', do (w) -> -> render_word w
-    el.on 'mouseenter', do (el) -> -> $('.selected.button').css top: (el.position().top)+'px'
+    el.on 'mouseenter', 
+      do (el) -> -> $('.selected.button').css top: (el.position().top)+'px'
     $('#words').append el
 
 render_word = (word) ->
@@ -53,11 +54,12 @@ render_word = (word) ->
         for wk, wv of vv
           map[sk][vk][wk] = wv
 
-    for sk, sv of node.del
+    for sk, sv of map
       for vk, vv of sv
-        delete map[sk][vk][vv]
-      if _.isEmpty map[sk][vk]
-        delete map[sk]
+        for wk, wv of vv when wk in node.del
+          delete vv[wk]
+        if vk in node.del or _.isEmpty sv[vk]
+          sv[vk] = {}
 
   else
     $('#page').append "<pre>    #{map[state.scene][state.verb][word]}"
