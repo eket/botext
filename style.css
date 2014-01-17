@@ -1,5 +1,5 @@
 html, body, .container {height: 100%; }
-body {background: #000; font-size: 10px;}
+body {background: #000; font-size: 11px;}
 
 #main {padding-right: 2%; padding-left: 2%}
 
@@ -26,7 +26,7 @@ img:last-child{
  opacity: 1;
 }
 
-pre {font-family:'Arial'; font-size: 10px;
+pre {font-family:'Arial'; font-size: 11px;
 margin: 0; padding: 0; border: 0;
 padding-bottom: 6px; 
 background-color: #ccc;
