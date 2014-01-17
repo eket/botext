@@ -1,5 +1,11 @@
 html, body, .container {height: 100%; }
-body {background: #000; font-size: 11px;}
+body {background: #000; font-family:'Prociono'; font-size: 16px;}
+
+@font-face
+{
+font-family: Prociono;
+src: url(font/Fanwood.otf);
+}
 
 #main {padding-right: 2%; padding-left: 2%}
 
@@ -26,7 +32,7 @@ img:last-child{
  opacity: 1;
 }
 
-pre {font-family:'Arial'; font-size: 11px;
+pre {font-family:'Prociono'; font-size: 16px;
 margin: 0; padding: 0; border: 0;
 padding-bottom: 6px; 
 background-color: #ccc;
@@ -39,8 +45,7 @@ pre.inter {color:#000;text-align: center;
  font-size: 16px;
  margin: 20px;}
  pre.inter.title{
-  font-size: 14px;
-  font-variant:small-caps; 
+  font-size: 18px; 
  }
 .menu.row {
  height: 20%;
