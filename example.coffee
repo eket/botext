@@ -50,7 +50,9 @@ window.Map =
     dance:
       'to music':'4/4/4/4/4'
       'to waves':'whoohoooo'
-      'till sunrise':'I dance till the sun comes up and my eyes cant bear the rises.'
+      'till sunrise':
+        t:'I dance till the sun comes up and my eyes cant bear the rises.'
+        del:[]
     go:
       'find some shit': 'I walk around for hours but everybody seems to be so sober I cant even understand what they are saying to me.'
       'home by bus':
