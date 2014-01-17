@@ -13,7 +13,6 @@ states =
     render_hub_verb scene, verb,
       click_back: -> states.scene scene
       click_word: (word) ->
-        __ scene, verb, word
         node = Map[scene][verb][word]
 
         for sk, sv of node.set

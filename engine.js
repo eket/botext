@@ -26,7 +26,6 @@
         },
         click_word: function(word) {
           var node, sk, sv, vk, vv, wk, wv, _base, _ref, _ref1;
-          __(scene, verb, word);
           node = Map[scene][verb][word];
           _ref = node.set;
           for (sk in _ref) {
