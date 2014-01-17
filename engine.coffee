@@ -32,8 +32,7 @@ states =
                 delete sv[vk]
 
         try delete Map[scene][verb][word]
-        
-        if node.del is [] or _.isEmpty _.keys Map[scene][verb]
+        if (node?.del?.length == 0) or _.isEmpty Map[scene][verb]
           delete Map[scene][verb]
 
         states.scene (node.scene or scene), node

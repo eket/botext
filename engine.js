@@ -25,7 +25,7 @@
           return states.scene(scene);
         },
         click_word: function(word) {
-          var node, sk, sv, vk, vv, wk, wv, _base, _ref;
+          var node, sk, sv, vk, vv, wk, wv, _base, _ref, _ref1;
           __(scene, verb, word);
           node = Map[scene][verb][word];
           _ref = node.set;
@@ -65,7 +65,7 @@
           try {
             delete Map[scene][verb][word];
           } catch (_error) {}
-          if (node.del === [] || _.isEmpty(_.keys(Map[scene][verb]))) {
+          if (((node != null ? (_ref1 = node.del) != null ? _ref1.length : void 0 : void 0) === 0) || _.isEmpty(Map[scene][verb])) {
             delete Map[scene][verb];
           }
           return states.scene(node.scene || scene, node);
