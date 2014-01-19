@@ -1,5 +1,5 @@
 html, body, .container {height: 100%; }
-body {background: #000; font-family:'Prociono'; font-size: 16px;}
+body {background: #000; font-family:'Prociono'; font-size: 14px;}
 
 @font-face
 {
@@ -7,7 +7,7 @@ font-family: Prociono;
 src: url(font/Prociono.ttf);
 }
 
-#main {padding:0;max-width: 600px;}
+#main {padding:0;max-width: 35em;}
 
 .row {margin:0;}
 
@@ -33,7 +33,7 @@ img:last-child{
  opacity: 1;
 }
 
-pre {font-family:'Prociono'; font-size: 16px;
+pre {font-family:'Prociono'; font-size: 14px;
 margin: 0; padding: 0; border: 0;
 padding-bottom: 6px; 
 background-color: #ccc;
@@ -43,10 +43,10 @@ opacity: 0.67;
 }
 pre:last-child {color:#000; opacity: 1;}
 pre.inter {text-align: center;
- font-size: 16px;
+ font-size: 12px;
  margin: 20px;}
  pre.inter.title{
-  font-size: 18px; 
+  font-size: 16px; 
  }
 
 .menu.row {
