@@ -21,8 +21,7 @@ src: url(font/Prociono.ttf);
 
 .page.row {
  height:79%;position:relative;
- background: #ccc;
-border-bottom:1px solid #222;}
+ background: #ccc;}
 
 img{
  width:100%;
@@ -50,12 +49,14 @@ pre.inter {text-align: center;
  }
 
 .menu.row {
- height: 21%;
+ height: 20%;
  border-bottom-color:#111;
  overflow:auto;
  background-color: #222;
- border-left:5px solid #000;
- border-right:5px solid #000;}
+ padding-top: 1px;
+ margin-top: 1px;
+ margin-left: 2%;
+ margin-right:2%;}
 
 .button {
  margin-bottom: 1px; margin-top: 0px; 
