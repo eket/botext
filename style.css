@@ -14,9 +14,9 @@ src: url(font/Prociono.ttf);
 .col-xs-6, .col-xs-12 {margin:0; padding:0; position: relative;}
 
 #page {max-height: 98%; overflow: auto; 
- padding-left: 6%; padding-right:6%;
+ padding-left: 9%; padding-right:9%;
  cursor:default; position:absolute;
- bottom:0; margin-bottom: 10px; margin-top: 10px;
+ bottom:0; margin-bottom: 20px;
  }
 
 .page.row {
@@ -34,7 +34,6 @@ img:last-child{
 
 pre {font-family:'Prociono'; font-size: 14px;
 margin: 0; padding: 0; border: 0;
-padding-bottom: 6px; 
 background-color: #ccc;
 word-break: normal;
 color:#000;
