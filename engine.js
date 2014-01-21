@@ -144,7 +144,7 @@ render_page = function(node) {
 
 $('#page').append("<pre class='inter title'>" + Map.opening.title);
 
-$('#page').append("<pre>    " + Map.opening.t);
+$('#page').append("<pre>      " + Map.opening.t);
 
 states.scene(Map.opening.sc);
 
