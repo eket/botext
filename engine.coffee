@@ -84,4 +84,4 @@ render_page = (node) ->
 $('#page').append "<pre class='inter title'>#{Map.opening.title}"
 $('#page').append "<pre>    #{Map.opening.t}"
 
-states.scene 'street'
+states.scene Map.opening.sc
