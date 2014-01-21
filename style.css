@@ -41,10 +41,10 @@ opacity: 0.67;
 }
 pre:last-child {color:#000; opacity: 1;}
 pre.inter {text-align: center;
- font-size: 12px;
+ font-size: 14px;
  margin: 20px;}
  pre.inter.title{
-  font-size: 12px; 
+  font-size: 15px; 
  }
 
 .menu.row {
