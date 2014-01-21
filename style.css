@@ -14,7 +14,7 @@ src: url(font/Prociono.ttf);
 .col-xs-6, .col-xs-12 {margin:0; padding:0; position: relative;}
 
 #page {max-height: 98%; overflow: auto; 
- padding-left: 9%; padding-right:9%;
+ padding-left: 8%; padding-right:8%;
  cursor:default; position:absolute;
  bottom:0; margin-bottom: 20px;
  }
