@@ -1,7 +1,7 @@
 window.Map =
   opening:
     sc:'street'
-    title:'BASEDnn on real text'
+    title:'BASED ON REAL TEXT'
     t:'I felt quite lucky this morning. But now Im just a doll sitting on this rotten bus for hours. I may as well leave now, the bus isnt gonna go anywhere in the near future. I think the driver is asleep, but its possible that he isnt even on the bus.'
   
   street:
