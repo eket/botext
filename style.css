@@ -42,8 +42,9 @@ opacity: 0.67;
 pre:last-child {color:#000; opacity: 1;}
 pre.inter {text-align: center;
  font-size: 14px;
- margin: 20px;}
+ margin: 3em;}
  pre.inter.title{
+  margin-bottom: 4em;
   font-size: 15px; 
  }
 
